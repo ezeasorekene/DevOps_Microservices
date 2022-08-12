@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 PORT=8000
-echo "Connecting to Port: $PORT"
+HOST=127.0.0.1
+# HOST=http://ec2-3-94-107-119.compute-1.amazonaws.com
+echo "Connecting to $HOST:$PORT"
 
 # POST method predict
 curl -d '{  
@@ -25,4 +27,4 @@ curl -d '{
    }
 }'\
      -H "Content-Type: application/json" \
-     -X POST http://ec2-3-94-107-119.compute-1.amazonaws.com:$PORT/predict
+     -X POST $HOST:$PORT/predict
