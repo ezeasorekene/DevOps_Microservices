@@ -5,11 +5,14 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=<your docker ID/path>
+dockerpath=ezeasorekene/alxproject:4.1
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
+docker tag ezeasorekene/alxproject:4.1 ezeasorekene/alxproject:4.1_final
+docker login -u ezeasorekene -p $PSSWRD
 
 # Step 3:
 # Push image to a docker repository
+docker push ezeasorekene/alxproject:4.1_final
